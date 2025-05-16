@@ -1,32 +1,28 @@
-# svelte-ts-skeleton-starter
+# MoneyFlow
 
-A modern template for Svelte projects using TypeScript and Vite as a bundler. This repository serves as a starting point for new Svelte projects with an optimized, ready-to-use configuration.
+Uma aplicação Svelte que visualiza o fluxo de dinheiro no Brasil através de diagramas Sankey.
 
-## Overview
+## Funcionalidades
 
-This template includes:
-- Svelte 5 with TypeScript support
-- Vite for fast development and optimized build
-- Skeleton UI integration
-- Light/dark theme configuration
-- Organized project structure
-- Internationalization (i18n) support
-- Comprehensive unit and E2E tests
-- CI/CD with GitHub Actions for GitHub Pages deployment
+- **Visualização Interativa**: Diagramas Sankey para visualizar o fluxo de dinheiro entre diferentes setores da economia
+- **Filtros Dinâmicos**: Visualize apenas dinheiro físico, eletrônico ou todo o fluxo
+- **Linha do Tempo**: Explore os dados históricos e projeções de 2020 a 2025
+- **Tema Escuro/Claro**: Interface adaptável ao tema do sistema
+- **Internacionalização**: Suporte a múltiplos idiomas (Português, Inglês e Espanhol)
 
 ## Creating Projects from this Template
 
 1. **Using GitHub**
    ```bash
    # Clone this template
-   gh repo create my-project --template svelte-ts-skeleton-starter
+   gh repo create my-project --template MoneyFlow
    # or use GitHub's interface to create a new repository from this template
    ```
 
 2. **Manually**
    ```bash
    # Clone the repository
-   git clone https://github.com/your-username/svelte-ts-skeleton-starter.git my-project
+   git clone https://github.com/patrickcmserrano/MoneyFlow.git my-project
    
    # Remove Git history
    cd my-project
@@ -47,14 +43,22 @@ This template includes:
 
 2. **Project Structure**
    ```
-   📦 svelte-ts-skeleton-starter
+   📦 MoneyFlow
    ├── 📂 public/
    │   └── vite.svg
    ├── 📂 src/
    │   ├── 📂 assets/
    │   │   └── svelte.svg
+   │   ├── 📂 components/
+   │   │   ├── LanguageSelector.svelte
+   │   │   ├── MoneyFlow.svelte
+   │   │   └── ThemeToggle.svelte
    │   ├── 📂 lib/
-   │   │   └── Counter.svelte
+   │   │   ├── 📂 locales/
+   │   │   │   ├── en.ts
+   │   │   │   ├── es.ts
+   │   │   │   └── pt.ts
+   │   │   └── i18n.ts
    │   ├── 📂 styles/
    │   │   └── global.css
    │   ├── app.css
@@ -112,7 +116,7 @@ The project uses TypeScript with the following main configurations:
 
 1. **Clone the repository**
    ```bash
-   git clone [REPOSITORY-URL]
+   git clone https://github.com/patrickcmserrano/MoneyFlow.git
    ```
 
 2. **Install dependencies**
