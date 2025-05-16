@@ -49,8 +49,7 @@ export default {
   "trendchart.metrics.electronic": "Electronic Money",
   "trendchart.metrics.government": "Government Flows",
   "trendchart.metrics.external": "External Market Flows",
-  
-  // New strings for MoneyMind Oasis
+    // New strings for MoneyMind Oasis
   "moneymind.title": "MoneyMind Oasis",
   "moneymind.subtitle": "Explore the meaning of money",
   "moneymind.start_journey": "Start Journey",
@@ -60,6 +59,18 @@ export default {
   "moneymind.history.origins": "Primitive Origins",  "moneymind.history.coins": "Coins and Metal",  "moneymind.history.paper": "Paper/Digital",
   "moneymind.history.philosophy": "Philosophy",
   "moneymind.reflect": "Reflect Now",
+  
+  // New strings for Primitive Origins section
+  "moneymind.primitiveorigins.title": "Primitive Origins of Money",
+  "moneymind.primitiveorigins.cognitive.title": "Cognitive Revolution",
+  "moneymind.primitiveorigins.cognitive.text": "The history of money begins with the Cognitive Revolution (c. 70,000 years ago), when Homo sapiens developed the ability to create \"imagined realities\" — collective fictions such as myths, gods, and eventually money. This ability enabled large-scale cooperation, essential for the emergence of economic systems.",
+  "moneymind.primitiveorigins.earlyforms.title": "Early Forms of Money",
+  "moneymind.primitiveorigins.earlyforms.text": "Around 3000 BCE in Sumer, barley grains were used as the first known form of money, responding to the intensification of economic activity. Other primitive forms included cowrie shells (used for 4,000 years across vast regions), cattle, salt, and beads, which had intrinsic value and were accepted through collective trust.",
+  "moneymind.primitiveorigins.barter.title": "Barter and Its Limitations", 
+  "moneymind.primitiveorigins.barter.text": "Before money, barter dominated but was inefficient as it required the \"double coincidence of wants\" (e.g., a shoemaker needed to find an apple producer who wanted shoes). Money emerged to facilitate exchanges, store wealth, and compare values.",
+  "moneymind.primitiveorigins.relation.title": "Relationship with Humanity",
+  "moneymind.primitiveorigins.relation.text": "Money, as a shared fiction, allowed bands of hunter-gatherers to evolve into complex societies. Gossip, which sustained groups of up to 150 individuals, was surpassed by trust in money, uniting strangers in commercial networks.",
+  "moneymind.primitiveorigins.suggestion": "Use infographics to show the transition from barter to barley grains and cowrie shells. Highlight the Cognitive Revolution as the starting point for human cooperation on a large scale.",
   
   // Reflection questions
   "moneymind.questions.meaning": "What does money mean to you?",
@@ -94,6 +105,7 @@ export default {
   
   // New strings for roadmap navigation
   "navigation.intro": "Introduction",
+  "navigation.primitiveorigins": "Primitive Origins",
   "navigation.history": "History",
   "navigation.concepts": "Concepts",
   "navigation.tools": "Tools",
@@ -158,13 +170,13 @@ export default {
   "moneymind.history.milestone_3_full": "<strong>618 CE</strong> - China introduces the first genuine paper money",
   "moneymind.history.milestone_4_full": "<strong>1971</strong> - First electronic funds transfer system (ACH) in the USA",
   "moneymind.history.milestone_5_full": "<strong>2009</strong> - Satoshi Nakamoto creates Bitcoin, the first decentralized cryptocurrency",
-  
-  // Accessibility descriptions - ensuring completeness
+    // Accessibility descriptions - ensuring completeness
   "navigation.aria.scroll_to_history": "Scroll to history section",
   "navigation.aria.scroll_to_concepts": "Scroll to concepts section",
   "navigation.aria.scroll_to_tools": "Scroll to tools section",
   "navigation.aria.scroll_to_practice": "Scroll to practice section",
   "navigation.aria.scroll_to_intro": "Scroll to introduction section",
+  "navigation.aria.scroll_to_primitiveorigins": "Scroll to primitive origins section",
   
   // Ensuring consistency with history descriptions
   "moneymind.history.origins_desc": "Approximately 10,000 years ago, with the emergence of agriculture, the system of direct exchanges (barter) became the foundation of primitive economy. These exchanges of goods established the foundations for all future economic systems.",

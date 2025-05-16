@@ -6,9 +6,9 @@
   import RoadmapNav from './navigation/RoadmapNav.svelte';
   import CoinScene from './three/CoinScene.svelte';
   import SharedAnimations from './styles/SharedAnimations.svelte';
-  
-  // Importar componentes de seção
+    // Importar componentes de seção
   import IntroSection from './sections/IntroSection.svelte';
+  import PrimitiveOriginsSection from './sections/PrimitiveOriginsSection.svelte';
   import HistorySection from './sections/HistorySection.svelte';
   import ConceptsSection from './sections/ConceptsSection.svelte';
   import ToolsSection from './sections/ToolsSection.svelte';
@@ -17,12 +17,11 @@
   // Definir tipos explícitos para as variáveis
   let container: HTMLDivElement | null = null;
   let containerReady = false;
-  
-  // Definir variáveis que estavam faltando
+    // Definir variáveis que estavam faltando
   let activeSection: string = 'intro'; // Seção ativa por padrão
   
   // Lista de seções para monitorar durante o scroll
-  const sections = ['intro', 'history', 'concepts', 'tools', 'practice'];
+  const sections = ['intro', 'primitiveorigins', 'history', 'concepts', 'tools', 'practice'];
   
   // Função para rolar até uma seção específica
   function scrollToSection(sectionId: string): void {
@@ -121,12 +120,11 @@
     <!-- Cena 3D -->
     {#if containerReady}
       <CoinScene {container} />
-    {/if}
-
-    <!-- Primeira seção (introdução) com background transparente para mostrar a cena 3D -->
+    {/if}    <!-- Primeira seção (introdução) com background transparente para mostrar a cena 3D -->
     <IntroSection id="intro" {container} />
     
     <!-- Seções adicionais que serão roladas -->
+    <PrimitiveOriginsSection id="primitiveorigins" {scrollToSection} />
     <HistorySection id="history" {scrollToSection} />
     <ConceptsSection id="concepts" {scrollToSection} />
     <ToolsSection id="tools" {scrollToSection} />

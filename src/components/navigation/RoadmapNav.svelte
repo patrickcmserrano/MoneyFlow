@@ -4,10 +4,10 @@
 
   export let activeSection: string;
   export let scrollToSection: (sectionId: string) => void;
-  
-  // Lista de seções para o roadmap
+    // Lista de seções para o roadmap
   const sections = [
     { id: 'intro', name: $_('navigation.intro', { default: 'Introdução' }) },
+    { id: 'primitiveorigins', name: $_('navigation.primitiveorigins', { default: 'Origens Primitivas' }) },
     { id: 'history', name: $_('navigation.history', { default: 'História' }) },
     { id: 'concepts', name: $_('navigation.concepts', { default: 'Conceitos' }) },
     { id: 'tools', name: $_('navigation.tools', { default: 'Ferramentas' }) },

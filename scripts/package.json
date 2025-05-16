@@ -1,0 +1,10 @@
+{
+  "name": "moneyflow-scripts",
+  "version": "1.0.0",
+  "description": "Scripts utilitários para o projeto MoneyFlow",
+  "type": "module",
+  "scripts": {
+    "migrate-translations": "node migrate-translations.js",
+    "check-translations": "node check-translations.js"
+  }
+}
