@@ -48,5 +48,54 @@ export default {
   "trendchart.metrics.physical": "Physical Currency",
   "trendchart.metrics.electronic": "Electronic Money",
   "trendchart.metrics.government": "Government Flows",
-  "trendchart.metrics.external": "External Market Flows"
+  "trendchart.metrics.external": "External Market Flows",
+  
+  // New strings for MoneyMind Oasis
+  "moneymind.title": "MoneyMind Oasis",
+  "moneymind.subtitle": "Explore the meaning of money",
+  "moneymind.start_journey": "Start Journey",
+  "moneymind.switch_to": "Switch to MoneyMind Oasis",
+  "moneymind.switch_back": "Back to Money Flow",
+  "moneymind.history.title": "The History of Money",
+  "moneymind.history.origins": "Primitive Origins",  "moneymind.history.coins": "Coins and Metal",  "moneymind.history.paper": "Paper/Digital",
+  "moneymind.history.philosophy": "Philosophy",
+  "moneymind.reflect": "Reflect Now",
+  
+  // Reflection questions
+  "moneymind.questions.meaning": "What does money mean to you?",
+  "moneymind.questions.life": "How would your life be if money didn't exist?",
+  "moneymind.questions.value": "Do you believe the value of money is natural or artificial?",  "moneymind.questions.ai": "How would you explain the concept of money to an artificial intelligence?",
+  "moneymind.questions.objects": "Why do we value objects that, in themselves, have no practical utility?",
+    // Messages related to twilight
+  "moneymind.twilight.message": "You are visiting during twilight hours (16:30-18:30). The visual experience has been enhanced!",
+  "moneymind.twilight.title": "Twilight Mode Activated",
+  "moneymind.twilight.close": "Got it",
+    // Footer
+  "moneymind.footer.description": "A project exploring the philosophical meaning of money",
+  "moneymind.footer.current_date": "Current date",
+  
+  // Strings para DataSources.svelte em inglês
+  "moneyflow.datasources.intro": "The data for this visualization is obtained from official sources and processed to ensure accuracy and consistency.",
+  "moneyflow.datasources.economic.title": "Economic Data",
+  "moneyflow.datasources.gdp.label": "GDP",
+  "moneyflow.datasources.trade.label": "International Trade",
+  "moneyflow.datasources.projections.label": "Projections",
+  "moneyflow.datasources.projections.description": "Based on historical trends and economic indicators",
+  "moneyflow.datasources.monetary.title": "Monetary Data",
+  "moneyflow.datasources.money.label": "Money Supply",
+  "moneyflow.datasources.revenue.label": "Federal Revenue",
+  "moneyflow.datasources.distribution.label": "Resource Distribution",
+  "moneyflow.datasources.distribution.description": "Analysis of financial flows between sectors of the economy",
+  "moneyflow.datasources.disclaimer.point1": "The visualization is a simplified representation for educational purposes",
+  "moneyflow.datasources.disclaimer.point2": "Some values are aggregated to facilitate understanding",
+  "moneyflow.datasources.disclaimer.point3": "Projections for future years have a margin of error",
+  "moneyflow.datasources.disclaimer.point4": "Official sources: ",
+  "moneyflow.datasources.updated": "Last updated:",
+  
+  // New strings for roadmap navigation
+  "navigation.intro": "Introduction",
+  "navigation.history": "History",
+  "navigation.concepts": "Concepts",
+  "navigation.tools": "Tools",
+  "navigation.practice": "Practice",
 };

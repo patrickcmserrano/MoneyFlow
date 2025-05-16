@@ -48,5 +48,54 @@ export default {
   "trendchart.metrics.physical": "Moneda Física",
   "trendchart.metrics.electronic": "Dinero Electrónico",
   "trendchart.metrics.government": "Flujos Gubernamentales",
-  "trendchart.metrics.external": "Flujos de Mercado Externo"
+  "trendchart.metrics.external": "Flujos de Mercado Externo",
+  
+  // Nuevas cadenas para MoneyMind Oasis
+  "moneymind.title": "MoneyMind Oasis",
+  "moneymind.subtitle": "Explora el significado del dinero",
+  "moneymind.start_journey": "Iniciar Viaje",
+  "moneymind.switch_to": "Cambiar a MoneyMind Oasis",
+  "moneymind.switch_back": "Volver a Flujo de Dinero",
+  "moneymind.history.title": "La Historia del Dinero",
+  "moneymind.history.origins": "Orígenes Primitivos",  "moneymind.history.coins": "Monedas y Metal",  "moneymind.history.paper": "Papel/Digital",
+  "moneymind.history.philosophy": "Filosofía",
+  "moneymind.reflect": "Reflexionar Ahora",
+  
+  // Preguntas de reflexión
+  "moneymind.questions.meaning": "¿Qué significa el dinero para ti?",
+  "moneymind.questions.life": "¿Cómo sería tu vida si el dinero no existiera?",
+  "moneymind.questions.value": "¿Crees que el valor del dinero es natural o artificial?",  "moneymind.questions.ai": "¿Cómo explicarías el concepto de dinero a una inteligencia artificial?",
+  "moneymind.questions.objects": "¿Por qué valoramos objetos que, en sí mismos, no tienen utilidad práctica?",
+    // Mensajes relacionados al crepúsculo
+  "moneymind.twilight.message": "Estás visitando durante las horas del crepúsculo (16:30-18:30). ¡La experiencia visual ha sido mejorada!",
+  "moneymind.twilight.title": "Modo Crepúsculo Activado",
+  "moneymind.twilight.close": "Entendido",
+    // Pie de página
+  "moneymind.footer.description": "Un proyecto que explora el significado filosófico del dinero",
+  "moneymind.footer.current_date": "Fecha actual",
+  
+  // Strings para DataSources.svelte em espanhol
+  "moneyflow.datasources.intro": "Los datos de esta visualización se obtienen de fuentes oficiales y se procesan para garantizar precisión y consistencia.",
+  "moneyflow.datasources.economic.title": "Datos Económicos",
+  "moneyflow.datasources.gdp.label": "PIB",
+  "moneyflow.datasources.trade.label": "Comercio Internacional",
+  "moneyflow.datasources.projections.label": "Proyecciones",
+  "moneyflow.datasources.projections.description": "Basado en tendencias históricas e indicadores económicos",
+  "moneyflow.datasources.monetary.title": "Datos Monetarios",
+  "moneyflow.datasources.money.label": "Oferta Monetaria",
+  "moneyflow.datasources.revenue.label": "Hacienda",
+  "moneyflow.datasources.distribution.label": "Distribución de Recursos",
+  "moneyflow.datasources.distribution.description": "Análisis de flujos financieros entre sectores de la economía",
+  "moneyflow.datasources.disclaimer.point1": "La visualización es una representación simplificada con fines educativos",
+  "moneyflow.datasources.disclaimer.point2": "Algunos valores se agregan para facilitar la comprensión",
+  "moneyflow.datasources.disclaimer.point3": "Las proyecciones para años futuros tienen margen de error",
+  "moneyflow.datasources.disclaimer.point4": "Fuentes oficiales: ",
+  "moneyflow.datasources.updated": "Última actualización:",
+  
+  // Nuevas cadenas para navegación del roadmap
+  "navigation.intro": "Introducción",
+  "navigation.history": "Historia",
+  "navigation.concepts": "Conceptos",
+  "navigation.tools": "Herramientas",
+  "navigation.practice": "Práctica",
 };
