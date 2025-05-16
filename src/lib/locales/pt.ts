@@ -7,7 +7,7 @@ export default {
   "features.typescript": "Suporte ao TypeScript",
   "features.testing": "Testes unitários e e2e",
   "features.i18n": "Suporte à internacionalização",
-  "footer.copyright": "© 2025 Template Svelte. Construído com Svelte.",
+  "footer.copyright": "© 2025 Construído por Patrick Serrano",
   "moneyflow.title": "Fluxo do Dinheiro no Brasil",
   "moneyflow.year": "Ano",
   "moneyflow.filter.all": "Todos os Fluxos",
@@ -161,5 +161,78 @@ export default {
   "moneymind.practice.cycle_3": "Multiplicação",
   "moneymind.practice.cycle_3_desc": "Desenvolver estratégias para fazer o dinheiro trabalhar a seu favor através de investimentos",
   "moneymind.practice.cycle_4": "Propósito",
-  "moneymind.practice.cycle_4_desc": "Alinhar recursos financeiros com valores pessoais e impacto positivo no mundo"
+  "moneymind.practice.cycle_4_desc": "Alinhar recursos financeiros com valores pessoais e impacto positivo no mundo",
+  
+  // Conteúdo de MoneyHistory.svelte
+  "moneymind.origins.firstTrades.title": "As primeiras trocas",
+  "moneymind.origins.firstTrades.text": "Há aproximadamente 10.000 anos, com o surgimento da agricultura, o sistema de trocas diretas (escambo) tornou-se a base da economia primitiva. Estas trocas de bens – uma pedra por um peixe, grãos por ferramentas – estabeleceram as fundações para todos os sistemas econômicos futuros.",
+  "moneymind.origins.challenges.title": "Desafios fundamentais",
+  "moneymind.origins.challenges.text": "As economias baseadas em escambo enfrentavam problemas críticos: como garantir valor equivalente entre bens diferentes? Como transportar mercadorias volumosas para longas distâncias? E como resolver o problema da \"dupla coincidência de desejos\" - encontrar alguém que tenha exatamente o que você quer e queira exatamente o que você tem?",
+  "moneymind.origins.firstForms.title": "Primeiras formas de dinheiro",
+  "moneymind.origins.firstForms.text": "Por volta de 3000 a.C., diversas sociedades começaram a usar objetos padronizados como intermediários de troca. Conchas cauris na China, contas wampum entre nativos americanos, sal na África e no Mediterrâneo, e pedras rai na ilha de Yap no Pacífico – todos funcionavam como proto-moedas.",
+  "moneymind.origins.quote": "\"Em essência, as primeiras trocas baseavam-se em valor percebido, não padronizado. Uma comunidade podia valorizar sal mais que outra, criando os primeiros conceitos de mercado e valores relativos.\" — David Graeber, \"Dívida: Os Primeiros 5.000 Anos\"",
+  "moneymind.origins.didYouKnow.title": "Você sabia?",
+  "moneymind.origins.didYouKnow.text": "Na ilha de Yap no Pacífico, enormes discos de pedra chamados rai (alguns com mais de 3,5 metros de diâmetro) eram usados como dinheiro. Devido ao seu tamanho e peso, as pedras frequentemente nem eram movidas quando trocavam de dono - todos na comunidade simplesmente reconheciam sua nova propriedade, criando um primitivo \"livro-razão\" mental que antecipa conceitualmente a tecnologia blockchain por milhares de anos.",
+  
+  "moneymind.coins.invention.title": "A invenção revolucionária",
+  "moneymind.coins.invention.text": "As primeiras moedas oficiais surgiram no reino da Lídia (atual oeste da Turquia) por volta de 600 a.C., cunhadas em electrum, uma liga natural de ouro e prata. Esta inovação representou um marco na história da civilização: pela primeira vez, o valor era garantido por uma autoridade central e padronizado em formato portátil.",
+  "moneymind.coins.expansion.title": "Expansão global",
+  "moneymind.coins.expansion.text": "A ideia de moeda cunhada espalhou-se rapidamente. Na Grécia Antiga, as dracmas de prata de Atenas tornaram-se uma das primeiras moedas \"internacionais\". O Império Romano desenvolveu um sistema monetário sofisticado com áureos (ouro), denários (prata) e sestércios (bronze), estabelecendo o primeiro sistema monetário verdadeiramente abrangente.",
+  "moneymind.coins.symbolism.title": "Simbolismo e poder",
+  "moneymind.coins.symbolism.text": "As moedas rapidamente se tornaram mais que simples meio de troca - eram símbolos de poder estatal. Os imperadores romanos usavam moedas para propagar sua imagem e ideologia pelo vasto império. A face de César nas moedas romanas pode ser considerada uma das primeiras formas de propaganda política em massa.",
+  "moneymind.coins.quote": "\"Quando uma moeda é cunhada, seu valor real não está no metal em si, mas no acordo social de que ela pode ser trocada por bens e serviços. Este foi o primeiro grande ato de fé econômica da humanidade, uma ponte entre o valor material e o valor simbólico.\" — Glyn Davies, \"História do Dinheiro\"",
+  "moneymind.coins.milestones.title": "Marcos históricos importantes:",
+  "moneymind.coins.milestones.lydia": "<strong>600 a.C.</strong> - Primeiras moedas oficiais da Lídia",
+  "moneymind.coins.milestones.drachma": "<strong>Século V a.C.</strong> - Dracmas atenienses tornam-se padrão no comércio mediterrâneo",
+  "moneymind.coins.milestones.rome": "<strong>27 a.C. a 476 d.C.</strong> - Sistema monetário do Império Romano",
+  "moneymind.coins.milestones.england": "<strong>997 d.C.</strong> - Primeira cunhagem padronizada na Inglaterra sob o rei Æthelred II",
+  "moneymind.coins.milestones.dollar": "<strong>1792</strong> - Coinage Act cria o dólar americano e o U.S. Mint",
+  
+  "moneymind.paper.intro": "A jornada do dinheiro de papel ao digital representa uma das maiores abstrações na história econômica humana. Seria ainda real o que não podemos tocar?",
+  "moneymind.paper.origins.title": "Origens do papel-moeda",
+  "moneymind.paper.origins.text": "A China da dinastia Tang (618-907 d.C.) introduziu o primeiro papel-moeda genuíno, conhecido como \"dinheiro voador\" devido à sua leveza. Conforme documentado pelo explorador Marco Polo, este sistema revolucionário permitiu ao império chinês expandir o comércio sem depender de metais pesados.",
+  "moneymind.paper.digital.title": "A era digital",
+  "moneymind.paper.digital.text1": "Hoje, aproximadamente 92% do dinheiro mundial existe apenas como registros digitais. O primeiro dinheiro verdadeiramente digital surgiu em 1971, quando o sistema bancário dos EUA começou a utilizar o sistema ACH (Automated Clearing House) para transferências eletrônicas.",
+  "moneymind.paper.digital.text2": "Em 2009, com o surgimento do Bitcoin criado por Satoshi Nakamoto, nasceu o conceito de moeda puramente digital sem nenhuma autoridade central, baseada em um livro-razão descentralizado chamado blockchain.",
+  "moneymind.paper.quote": "\"O dinheiro moderno é um sistema de anotações contábeis. Quando você faz uma compra online, nenhuma moeda física se move - apenas permissões em bancos de dados são alteradas. Hoje, o dinheiro é essencialmente informação.\" — Yuval Noah Harari, \"Sapiens: Uma breve história da humanidade\"",
+  "moneymind.paper.future.title": "O futuro do dinheiro",
+  "moneymind.paper.future.text": "Estamos testemunhando a próxima evolução com Moedas Digitais de Bancos Centrais (CBDCs), onde governos estão desenvolvendo versões totalmente digitais de suas moedas nacionais, combinando a praticidade digital com o respaldo estatal.",
+  "moneymind.paper.references.title": "Referências bibliográficas:",
+  "moneymind.paper.references.ferguson": "Ferguson, Niall. \"A Ascensão do Dinheiro: Uma História Financeira do Mundo\" (2008)",
+  "moneymind.paper.references.weatherford": "Weatherford, Jack. \"A História do Dinheiro\" (1997)",
+  "moneymind.paper.references.vigna": "Vigna, Paul & Casey, Michael J. \"A Era das Criptomoedas\" (2015)",
+  
+  "moneymind.philosophy.fiction.title": "A grande ficção humana",
+  "moneymind.philosophy.fiction.text": "O dinheiro representa uma das construções sociais mais poderosas já criadas pela humanidade. Diferente de necessidades básicas como comida ou abrigo, o dinheiro não tem valor intrínseco além daquele que coletivamente concordamos em atribuir a ele. É um sistema que funciona apenas porque todos acreditamos nele simultaneamente.",
+  "moneymind.philosophy.perspective.title": "Perspectivas comparativas",
+  "moneymind.philosophy.perspective.text": "O dinheiro faz sentido para nós, mas e para outras formas de vida ou consciência? Golfinhos, apesar de sua inteligência avançada, não acumulam conchas como \"dinheiro\". Uma inteligência artificial pode manipular valores financeiros com precisão, mas não \"deseja\" riqueza. O dinheiro existe apenas no contexto de nossas necessidades, desejos e estruturas sociais humanas.",
+  "moneymind.philosophy.consciousness.title": "Dinheiro e consciência",
+  "moneymind.philosophy.consciousness.text": "Aristóteles distinguia entre o uso natural do dinheiro (como meio de troca) e seu uso não-natural (acumulação pela acumulação). Já Marx argumentou que o dinheiro aliena as pessoas de seu trabalho e de si mesmas. Simmel, em \"A Filosofia do Dinheiro\" (1900), explorou como o dinheiro transformou relações sociais e moldou a modernidade, quantificando aspectos da vida anteriormente inquantificáveis.",
+  "moneymind.philosophy.quote": "\"O dinheiro é talvez a ficção mais poderosa que já criamos - um sistema que funciona apenas porque coletivamente acreditamos nele. Se todos parassem de acreditar simultaneamente, todo o sistema entraria em colapso. Neste sentido, economias são essencialmente sistemas de fé.\" — Yuval Noah Harari",
+  "moneymind.philosophy.perspectives.title": "Perspectivas filosóficas importantes:",
+  "moneymind.philosophy.perspectives.aristotle": "<strong>Aristóteles</strong> - Distinguia entre o uso natural do dinheiro como facilitador de trocas e seu uso não-natural para a acumulação",
+  "moneymind.philosophy.perspectives.marx": "<strong>Karl Marx</strong> - Analisou como o dinheiro aliena as pessoas de seu trabalho e cria relações de poder",
+  "moneymind.philosophy.perspectives.simmel": "<strong>Georg Simmel</strong> - Em \"A Filosofia do Dinheiro\" (1900), explorou o impacto do dinheiro na psicologia humana e nas relações sociais",
+  "moneymind.philosophy.perspectives.baudrillard": "<strong>Jean Baudrillard</strong> - Argumentou que o dinheiro moderno perdeu sua conexão com o real, tornando-se puramente simbólico",
+  
+  // Novas chaves para marcos históricos
+  "moneymind.history.milestone_1_full": "<strong>600 a.C.</strong> - Primeiras moedas oficiais da Lídia",
+  "moneymind.history.milestone_2_full": "<strong>Século V a.C.</strong> - Dracmas atenienses tornam-se padrão no comércio mediterrâneo",
+  "moneymind.history.milestone_3_full": "<strong>618 d.C.</strong> - China introduz o primeiro papel-moeda genuíno",
+  "moneymind.history.milestone_4_full": "<strong>1971</strong> - Primeiro sistema de transferência eletrônica de fundos (ACH) nos EUA",
+  "moneymind.history.milestone_5_full": "<strong>2009</strong> - Satoshi Nakamoto cria o Bitcoin, primeira criptomoeda descentralizada",
+  
+  // Chaves de depuração para verificar o funcionamento de i18n
+  "debug.current_language": "O idioma atual é Português",
+  "debug.test_message": "Esta é uma mensagem de teste em Português",
+  
+  // Adicionando chaves para garantir consistência com todos os idiomas
+  "moneymind.history.century_5": "Século V a.C.",
+  "moneymind.history.milestone_2": "Dracmas atenienses tornam-se padrão no comércio mediterrâneo",
+  "moneymind.history.milestone_3": "China introduz o primeiro papel-moeda genuíno",
+  "moneymind.history.milestone_4": "Primeiro sistema de transferência eletrônica de fundos (ACH) nos EUA",
+  "moneymind.history.milestone_5": "Satoshi Nakamoto cria o Bitcoin, primeira criptomoeda descentralizada",
+  
+  // Chaves de acessibilidade para ScrollToSection (complementando as existentes)
+  "navigation.aria.scroll_to_intro": "Rolar para a seção de introdução",
 };

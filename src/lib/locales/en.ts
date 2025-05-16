@@ -74,7 +74,7 @@ export default {
   "moneymind.footer.description": "A project exploring the philosophical meaning of money",
   "moneymind.footer.current_date": "Current date",
   
-  // Strings para DataSources.svelte em inglês
+  // Strings for DataSources.svelte (corrected comment)
   "moneyflow.datasources.intro": "The data for this visualization is obtained from official sources and processed to ensure accuracy and consistency.",
   "moneyflow.datasources.economic.title": "Economic Data",
   "moneyflow.datasources.gdp.label": "GDP",
@@ -98,4 +98,94 @@ export default {
   "navigation.concepts": "Concepts",
   "navigation.tools": "Tools",
   "navigation.practice": "Practice",
+  
+  // Content for MoneyHistory.svelte
+  "moneymind.origins.firstTrades.title": "The first trades",
+  "moneymind.origins.firstTrades.text": "Approximately 10,000 years ago, with the emergence of agriculture, the system of direct exchanges (barter) became the foundation of primitive economy. These exchanges of goods – a stone for a fish, grains for tools – established the foundations for all future economic systems.",
+  "moneymind.origins.challenges.title": "Fundamental challenges",
+  "moneymind.origins.challenges.text": "Barter-based economies faced critical problems: how to ensure equivalent value between different goods? How to transport bulky merchandise over long distances? And how to solve the problem of the \"double coincidence of wants\" - finding someone who has exactly what you want and wants exactly what you have?",
+  "moneymind.origins.firstForms.title": "Early forms of money",
+  "moneymind.origins.firstForms.text": "Around 3000 BCE, various societies began using standardized objects as exchange intermediaries. Cowrie shells in China, wampum beads among Native Americans, salt in Africa and the Mediterranean, and rai stones on the island of Yap in the Pacific – all functioned as proto-currencies.",
+  "moneymind.origins.quote": "\"In essence, the first exchanges were based on perceived value, not standardized value. One community might value salt more than another, creating the first concepts of market and relative values.\" — David Graeber, \"Debt: The First 5,000 Years\"",
+  "moneymind.origins.didYouKnow.title": "Did you know?",
+  "moneymind.origins.didYouKnow.text": "On the Pacific island of Yap, enormous stone discs called rai (some over 3.5 meters in diameter) were used as money. Due to their size and weight, the stones were often not moved when they changed owners - everyone in the community simply recognized their new ownership, creating a primitive mental \"ledger\" that conceptually anticipates blockchain technology by thousands of years.",
+  
+  "moneymind.coins.invention.title": "The revolutionary invention",
+  "moneymind.coins.invention.text": "The first official coins emerged in the kingdom of Lydia (modern-day western Turkey) around 600 BCE, minted in electrum, a natural alloy of gold and silver. This innovation represented a milestone in the history of civilization: for the first time, value was guaranteed by a central authority and standardized in portable format.",
+  "moneymind.coins.expansion.title": "Global expansion",
+  "moneymind.coins.expansion.text": "The idea of minted currency spread rapidly. In Ancient Greece, the silver drachmas of Athens became one of the first \"international\" currencies. The Roman Empire developed a sophisticated monetary system with aureus (gold), denarius (silver), and sestertius (bronze) coins, establishing the first truly comprehensive monetary system.",
+  "moneymind.coins.symbolism.title": "Symbolism and power",
+  "moneymind.coins.symbolism.text": "Coins quickly became more than simple means of exchange - they were symbols of state power. Roman emperors used coins to propagate their image and ideology throughout the vast empire. Caesar's face on Roman coins can be considered one of the first forms of mass political propaganda.",
+  "moneymind.coins.quote": "\"When a coin is minted, its real value is not in the metal itself, but in the social agreement that it can be exchanged for goods and services. This was humanity's first great act of economic faith, a bridge between material value and symbolic value.\" — Glyn Davies, \"A History of Money\"",
+  "moneymind.coins.milestones.title": "Important historical milestones:",
+  "moneymind.coins.milestones.lydia": "<strong>600 BCE</strong> - First official coins of Lydia",
+  "moneymind.coins.milestones.drachma": "<strong>5th century BCE</strong> - Athenian drachmas become standard in Mediterranean trade",
+  "moneymind.coins.milestones.rome": "<strong>27 BCE to 476 CE</strong> - Roman Empire monetary system",
+  "moneymind.coins.milestones.england": "<strong>997 CE</strong> - First standardized coinage in England under King Æthelred II",
+  "moneymind.coins.milestones.dollar": "<strong>1792</strong> - Coinage Act creates the American dollar and the U.S. Mint",
+  
+  "moneymind.paper.intro": "The journey from paper money to digital represents one of the greatest abstractions in human economic history. Is something still real if we cannot touch it?",
+  "moneymind.paper.origins.title": "Origins of paper money",
+  "moneymind.paper.origins.text": "Tang Dynasty China (618-907 CE) introduced the first genuine paper money, known as \"flying money\" due to its lightness. As documented by the explorer Marco Polo, this revolutionary system allowed the Chinese empire to expand trade without relying on heavy metals.",
+  "moneymind.paper.digital.title": "The digital era",
+  "moneymind.paper.digital.text1": "Today, approximately 92% of the world's money exists only as digital records. The first truly digital money emerged in 1971, when the U.S. banking system began using the ACH (Automated Clearing House) system for electronic transfers.",
+  "moneymind.paper.digital.text2": "In 2009, with the emergence of Bitcoin created by Satoshi Nakamoto, the concept of purely digital currency without any central authority was born, based on a decentralized ledger called blockchain.",
+  "moneymind.paper.quote": "\"Modern money is a system of accounting entries. When you make an online purchase, no physical currency moves - only permissions in databases are changed. Today, money is essentially information.\" — Yuval Noah Harari, \"Sapiens: A Brief History of Humankind\"",
+  "moneymind.paper.future.title": "The future of money",
+  "moneymind.paper.future.text": "We are witnessing the next evolution with Central Bank Digital Currencies (CBDCs), where governments are developing fully digital versions of their national currencies, combining digital convenience with state backing.",
+  "moneymind.paper.references.title": "Bibliographic references:",
+  "moneymind.paper.references.ferguson": "Ferguson, Niall. \"The Ascent of Money: A Financial History of the World\" (2008)",
+  "moneymind.paper.references.weatherford": "Weatherford, Jack. \"The History of Money\" (1997)",
+  "moneymind.paper.references.vigna": "Vigna, Paul & Casey, Michael J. \"The Age of Cryptocurrency\" (2015)",
+  
+  "moneymind.philosophy.fiction.title": "The great human fiction",
+  "moneymind.philosophy.fiction.text": "Money represents one of the most powerful social constructs ever created by humanity. Unlike basic needs such as food or shelter, money has no intrinsic value beyond what we collectively agree to attribute to it. It is a system that works only because we all believe in it simultaneously.",
+  "moneymind.philosophy.perspective.title": "Comparative perspectives",
+  "moneymind.philosophy.perspective.text": "Money makes sense to us, but what about other forms of life or consciousness? Dolphins, despite their advanced intelligence, do not accumulate shells as \"money\". An artificial intelligence can manipulate financial values with precision, but does not \"desire\" wealth. Money exists only in the context of our human needs, desires, and social structures.",
+  "moneymind.philosophy.consciousness.title": "Money and consciousness",
+  "moneymind.philosophy.consciousness.text": "Aristotle distinguished between the natural use of money (as a medium of exchange) and its unnatural use (accumulation for the sake of accumulation). Marx argued that money alienates people from their labor and from themselves. Simmel, in \"The Philosophy of Money\" (1900), explored how money transformed social relationships and shaped modernity, quantifying previously unquantifiable aspects of life.",
+  "moneymind.philosophy.quote": "\"Money is perhaps the most powerful fiction we have ever created - a system that works only because we collectively believe in it. If everyone stopped believing simultaneously, the entire system would collapse. In this sense, economies are essentially systems of faith.\" — Yuval Noah Harari",
+  "moneymind.philosophy.perspectives.title": "Important philosophical perspectives:",
+  "moneymind.philosophy.perspectives.aristotle": "<strong>Aristotle</strong> - Distinguished between the natural use of money as a facilitator of exchanges and its unnatural use for accumulation",
+  "moneymind.philosophy.perspectives.marx": "<strong>Karl Marx</strong> - Analyzed how money alienates people from their labor and creates power relationships",
+  "moneymind.philosophy.perspectives.simmel": "<strong>Georg Simmel</strong> - In \"The Philosophy of Money\" (1900), explored the impact of money on human psychology and social relationships",
+  "moneymind.philosophy.perspectives.baudrillard": "<strong>Jean Baudrillard</strong> - Argued that modern money has lost its connection with the real, becoming purely symbolic",
+  "debug.current_language": "Current language is English",
+  "debug.test_message": "This is a test message in English",
+  
+  "moneymind.history.milestone_1_full": "<strong>600 BCE</strong> - First official coins from Lydia",
+  "moneymind.history.milestone_2_full": "<strong>5th Century BCE</strong> - Athenian drachmas become standard in Mediterranean trade",
+  "moneymind.history.milestone_3_full": "<strong>618 CE</strong> - China introduces the first genuine paper money",
+  "moneymind.history.milestone_4_full": "<strong>1971</strong> - First electronic funds transfer system (ACH) in the USA",
+  "moneymind.history.milestone_5_full": "<strong>2009</strong> - Satoshi Nakamoto creates Bitcoin, the first decentralized cryptocurrency",
+  
+  // Accessibility descriptions - ensuring completeness
+  "navigation.aria.scroll_to_history": "Scroll to history section",
+  "navigation.aria.scroll_to_concepts": "Scroll to concepts section",
+  "navigation.aria.scroll_to_tools": "Scroll to tools section",
+  "navigation.aria.scroll_to_practice": "Scroll to practice section",
+  "navigation.aria.scroll_to_intro": "Scroll to introduction section",
+  
+  // Ensuring consistency with history descriptions
+  "moneymind.history.origins_desc": "Approximately 10,000 years ago, with the emergence of agriculture, the system of direct exchanges (barter) became the foundation of primitive economy. These exchanges of goods established the foundations for all future economic systems.",
+  "moneymind.history.origins_challenges": "Barter-based economies faced critical problems: how to ensure equivalent value between different goods? How to transport bulky merchandise over long distances?",
+  
+  // Adding missing keys for coins section
+  "moneymind.history.coins_desc": "The first official coins emerged in the kingdom of Lydia (modern-day western Turkey) around 600 BCE, minted in electrum, a natural alloy of gold and silver. This innovation represented a milestone in the history of civilization.",
+  "moneymind.history.coins_expansion": "The idea of minted currency spread rapidly. In Ancient Greece, the silver drachmas of Athens became one of the first \"international\" currencies.",
+  
+  // Adding missing keys for paper section
+  "moneymind.history.paper_desc": "Tang Dynasty China (618-907 CE) introduced the first genuine paper money, known as \"flying money\" due to its lightness. This revolutionary system allowed the Chinese empire to expand trade without relying on heavy metals.",
+  "moneymind.history.paper_digital": "Today, approximately 92% of the world's money exists only as digital records. The first truly digital money emerged in 1971, when the U.S. banking system began using the ACH system for electronic transfers.",
+  
+  // Adding missing keys for philosophy section
+  "moneymind.history.philosophy_desc": "Money represents one of the most powerful social constructs ever created by humanity. Unlike basic needs such as food or shelter, money has no intrinsic value beyond what we collectively agree to attribute to it.",
+  "moneymind.history.philosophy_aristotle": "Aristotle distinguished between the natural use of money (as a medium of exchange) and its unnatural use (accumulation for accumulation's sake). Does money alienate people or empower them?",
+  
+  // Additional milestone keys (for completeness)
+  "moneymind.history.century_5": "5th Century BCE",
+  "moneymind.history.milestone_2": "Athenian drachmas become standard in Mediterranean trade",
+  "moneymind.history.milestone_3": "China introduces the first genuine paper money",
+  "moneymind.history.milestone_4": "First electronic funds transfer system (ACH) in the USA",
+  "moneymind.history.milestone_5": "Satoshi Nakamoto creates Bitcoin, the first decentralized cryptocurrency",
 };

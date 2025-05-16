@@ -17,10 +17,12 @@
   // Definir tipos explícitos para as variáveis
   let container: HTMLDivElement | null = null;
   let containerReady = false;
-  let sceneDiv: HTMLDivElement | null = null;
   
   // Definir variáveis que estavam faltando
   let activeSection: string = 'intro'; // Seção ativa por padrão
+  
+  // Lista de seções para monitorar durante o scroll
+  const sections = ['intro', 'history', 'concepts', 'tools', 'practice'];
   
   // Função para rolar até uma seção específica
   function scrollToSection(sectionId: string): void {
@@ -31,26 +33,40 @@
     }
   }
   
-  // Função para detectar a direção da rolagem
-  function detectScrollDirection(event: Event): void {
-    // Implementação da detecção de direção de rolagem se necessário
-  }
-  
-  // Função para lidar com o evento de rolagem
-  function handleScroll(event: Event): void {
-    // Implementação para atualizar activeSection com base na rolagem
-    const sections = ['intro', 'history', 'concepts', 'tools', 'practice'];
+  // Função para detectar qual seção está visível
+  function updateActiveSection(): void {
+    const scrollPosition = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    const middleViewport = scrollPosition + viewportHeight / 2;
     
+    // Verificar cada seção e determinar qual está mais visível
     for (const sectionId of sections) {
       const element = document.getElementById(sectionId);
       if (element) {
         const rect = element.getBoundingClientRect();
-        // Se a seção está visível na tela
-        if (rect.top <= 100 && rect.bottom >= 100) {
-          activeSection = sectionId;
-          break;
+        const sectionTop = scrollPosition + rect.top;
+        const sectionBottom = scrollPosition + rect.bottom;
+        
+        // Se o ponto médio da viewport estiver dentro desta seção
+        if (middleViewport >= sectionTop && middleViewport <= sectionBottom) {
+          if (activeSection !== sectionId) {
+            activeSection = sectionId;
+          }
+          break; // Encontrou a seção, sair do loop
         }
       }
+    }
+  }
+  
+  // Throttling para melhor desempenho
+  let ticking = false;
+  function handleScroll(): void {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateActiveSection();
+        ticking = false;
+      });
+      ticking = true;
     }
   }
 
@@ -72,20 +88,20 @@
     // Indicar que o container está pronto imediatamente
     containerReady = true;
     
-    // Adicionar event listeners
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('scroll', detectScrollDirection);
-
+    // Adicionar evento de scroll
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Verificar seção inicial após o carregamento da página
+    setTimeout(updateActiveSection, 200);
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('scroll', detectScrollDirection);
     };
   });
 
   onDestroy(() => {
     containerReady = false;
     window.removeEventListener('scroll', handleScroll);
-    window.removeEventListener('scroll', detectScrollDirection);
     
     // Remover o container se foi criado dinamicamente
     if (container && container.parentNode) {

@@ -50,7 +50,7 @@
   <div class="content pt-screen">
     <!-- Rodapé -->
     <footer class="py-8 text-center">
-      <p class="text-sm text-white">MoneyMind Oasis &copy; 2025 | {$_('footer.copyright')}</p>
+      <p class="text-sm text-white">{$_('footer.copyright')}</p>
       <p class="text-xs mt-2 text-gray-400">{$_('moneymind.footer.description')}</p>
       {#if currentDate}
         <p class="text-xs mt-2 text-purple-400">{$_('moneymind.footer.current_date')}: {currentDate}</p>
@@ -102,7 +102,7 @@
   
   .content {
     position: relative;
-    z-index: 1;
+    z-index: 1000;
   }
   
   .pt-screen {

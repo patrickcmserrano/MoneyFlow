@@ -18,7 +18,7 @@
 <div class="roadmap" transition:fade={{ duration: 300 }}>
   <div class="roadmap-inner">
     <div class="roadmap-line"></div>
-    {#each sections as section, index}
+    {#each sections as section}
       <div 
         class="roadmap-item {activeSection === section.id ? 'active' : ''}" 
         on:click={() => scrollToSection(section.id)}

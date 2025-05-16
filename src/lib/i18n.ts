@@ -27,9 +27,14 @@ export function setupI18n() {
     fallbackLocale: 'en',
     initialLocale: initialLocale,
   });
+  
+  // Debug: verificar se as mensagens estão sendo carregadas corretamente
+  console.log('i18n inicializado com locale:', initialLocale);
+  console.log('Mensagens disponíveis:', Object.keys(translations).join(', '));
 }
 
-type TranslationKey = keyof typeof translations['en'];
+// Tipo mais flexível para permitir chaves dinâmicas, especialmente para testes
+type TranslationKey = keyof typeof translations['en'] | string;
 
 // Function to get the initial locale based on browser or localStorage
 function getInitialLocale() {
@@ -60,6 +65,7 @@ export function createI18nStore() {
       }
       locale.set(lang);
       set(lang);
+      console.log(`Idioma alterado para: ${lang}`); // Log para debugar
       return lang;
     },
     initialize() {
@@ -85,10 +91,42 @@ export function createI18nStore() {
       // Use English as default
       this.setLanguage('en');
     },
+    // Permitir qualquer chave de string para testes, mas avisar quando uma chave inexistente for usada
     t(key: TranslationKey, lang: SupportedLanguage = 'en') {
-      return translations[lang]?.[key] || key;
+      // Using type assertion to avoid TypeScript's strict index checks
+      // while maintaining runtime safety with the conditional check below
+      const langTranslations = translations[lang] as Record<string, string>;
+      const translation = langTranslations?.[key as string];
+      
+      if (!translation && process.env.NODE_ENV === 'development') {
+        console.warn(`Warning: Translation key "${key}" not found in language "${lang}"`);
+      }
+      return translation || key;
     },
-    translations // Export translations for tests
+    translations, // Export translations for tests
+
+    // Método de diagnóstico para verificar inconsistências de tradução
+    checkTranslationConsistency() {
+      const enKeys = Object.keys(translations.en);
+      const ptKeys = Object.keys(translations.pt);
+      const esKeys = Object.keys(translations.es);
+      
+      const missingInPt = enKeys.filter(key => !ptKeys.includes(key));
+      const missingInEs = enKeys.filter(key => !esKeys.includes(key));
+      
+      console.log("=== Diagnóstico de Traduções ===");
+      console.log(`Total de chaves: EN=${enKeys.length}, PT=${ptKeys.length}, ES=${esKeys.length}`);
+      
+      if (missingInPt.length) {
+        console.warn(`Chaves faltando em PT: ${missingInPt.join(', ')}`);
+      }
+      
+      if (missingInEs.length) {
+        console.warn(`Chaves faltando em ES: ${missingInEs.length > 10 ? `${missingInEs.length} chaves` : missingInEs.join(', ')}`);
+      }
+      
+      return { enKeys, ptKeys, esKeys, missingInPt, missingInEs };
+    }
   };
 
   return store;
