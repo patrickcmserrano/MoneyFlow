@@ -7,5 +7,22 @@ export default {
   "features.typescript": "Soporte para TypeScript",
   "features.testing": "Pruebas unitarias y e2e",
   "features.i18n": "Soporte para internacionalización",
-  "footer.copyright": "© 2025 Plantilla Svelte. Construido con Svelte."
+  "footer.copyright": "© 2025 Plantilla Svelte. Construido con Svelte.",
+  "moneyflow.title": "Flujo de Dinero en Brasil",
+  "moneyflow.year": "Año",
+  "moneyflow.filter.all": "Todos los Flujos",
+  "moneyflow.filter.physical": "Dinero Físico",
+  "moneyflow.filter.electronic": "Dinero Electrónico",
+  "moneyflow.legend.financial": "Instituciones Financieras",
+  "moneyflow.legend.people": "Personas/Empresas",
+  "moneyflow.legend.government": "Gobierno/Tesoro",
+  "moneyflow.legend.external": "Mercado Externo",
+  "moneyflow.legend.electronic": "Dinero Electrónico",
+  "moneyflow.animation.play": "Reproducir Animación",
+  "moneyflow.animation.stop": "Detener Animación",
+  "moneyflow.animation.speed": "Velocidad",
+  "moneyflow.animation.reset": "Reiniciar",
+  "moneyflow.animation.step_mode": "Modo Paso a Paso",
+  "moneyflow.animation.next_step": "Siguiente Paso",
+  "moneyflow.animation.highlight": "Destacar Flujos Principales"
 };

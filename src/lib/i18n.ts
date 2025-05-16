@@ -20,7 +20,17 @@ export const translations = {
     'features.typescript': 'TypeScript support',
     'features.testing': 'Unit and e2e tests',
     'features.i18n': 'Internationalization support',
-    'footer.copyright': '© 2025 Svelte Template. Built with Svelte.'
+    'footer.copyright': '© 2025 Svelte Template. Built with Svelte.',
+    'moneyflow.title': 'Money Flow in Brazil',
+    'moneyflow.year': 'Year',
+    'moneyflow.filter.all': 'All Flows',
+    'moneyflow.filter.physical': 'Physical Money',
+    'moneyflow.filter.electronic': 'Electronic Money',
+    'moneyflow.legend.financial': 'Financial Institutions',
+    'moneyflow.legend.people': 'People/Companies',
+    'moneyflow.legend.government': 'Government/Treasury',
+    'moneyflow.legend.external': 'External Market',
+    'moneyflow.legend.electronic': 'Electronic Money'
   },
   pt: {
     greeting: 'Olá',
@@ -34,7 +44,17 @@ export const translations = {
     'features.typescript': 'Suporte ao TypeScript',
     'features.testing': 'Testes unitários e e2e',
     'features.i18n': 'Suporte à internacionalização',
-    'footer.copyright': '© 2025 Template Svelte. Construído com Svelte.'
+    'footer.copyright': '© 2025 Template Svelte. Construído com Svelte.',
+    'moneyflow.title': 'Fluxo do Dinheiro no Brasil',
+    'moneyflow.year': 'Ano',
+    'moneyflow.filter.all': 'Todos os Fluxos',
+    'moneyflow.filter.physical': 'Dinheiro Físico',
+    'moneyflow.filter.electronic': 'Dinheiro Eletrônico',
+    'moneyflow.legend.financial': 'Instituições Financeiras',
+    'moneyflow.legend.people': 'Pessoas/Empresas',
+    'moneyflow.legend.government': 'Governo/Tesouro',
+    'moneyflow.legend.external': 'Mercado Externo',
+    'moneyflow.legend.electronic': 'Dinheiro Eletrônico'
   },
   es: {
     greeting: 'Hola',
@@ -48,7 +68,17 @@ export const translations = {
     'features.typescript': 'Soporte para TypeScript',
     'features.testing': 'Pruebas unitarias y e2e',
     'features.i18n': 'Soporte para internacionalización',
-    'footer.copyright': '© 2025 Plantilla Svelte. Construido con Svelte.'
+    'footer.copyright': '© 2025 Plantilla Svelte. Construido con Svelte.',
+    'moneyflow.title': 'Flujo de Dinero en Brasil',
+    'moneyflow.year': 'Año',
+    'moneyflow.filter.all': 'Todos los Flujos',
+    'moneyflow.filter.physical': 'Dinero Físico',
+    'moneyflow.filter.electronic': 'Dinero Electrónico',
+    'moneyflow.legend.financial': 'Instituciones Financieras',
+    'moneyflow.legend.people': 'Personas/Empresas',
+    'moneyflow.legend.government': 'Gobierno/Tesoro',
+    'moneyflow.legend.external': 'Mercado Externo',
+    'moneyflow.legend.electronic': 'Dinero Electrónico'
   }
 };
 

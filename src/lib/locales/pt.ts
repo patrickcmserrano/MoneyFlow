@@ -7,5 +7,22 @@ export default {
   "features.typescript": "Suporte ao TypeScript",
   "features.testing": "Testes unitários e e2e",
   "features.i18n": "Suporte à internacionalização",
-  "footer.copyright": "© 2025 Template Svelte. Construído com Svelte."
+  "footer.copyright": "© 2025 Template Svelte. Construído com Svelte.",
+  "moneyflow.title": "Fluxo do Dinheiro no Brasil",
+  "moneyflow.year": "Ano",
+  "moneyflow.filter.all": "Todos os Fluxos",
+  "moneyflow.filter.physical": "Dinheiro Físico",
+  "moneyflow.filter.electronic": "Dinheiro Eletrônico",
+  "moneyflow.legend.financial": "Instituições Financeiras",
+  "moneyflow.legend.people": "Pessoas/Empresas",
+  "moneyflow.legend.government": "Governo/Tesouro",
+  "moneyflow.legend.external": "Mercado Externo",
+  "moneyflow.legend.electronic": "Dinheiro Eletrônico",
+  "moneyflow.animation.play": "Iniciar Animação",
+  "moneyflow.animation.stop": "Parar Animação",
+  "moneyflow.animation.speed": "Velocidade",
+  "moneyflow.animation.reset": "Reiniciar",
+  "moneyflow.animation.step_mode": "Modo Passo a Passo",
+  "moneyflow.animation.next_step": "Próximo Passo",
+  "moneyflow.animation.highlight": "Destacar Fluxos Principais"
 };

@@ -7,5 +7,22 @@ export default {
   "features.typescript": "TypeScript support",
   "features.testing": "Unit and e2e tests",
   "features.i18n": "Internationalization support",
-  "footer.copyright": "© 2025 Svelte Template. Built with Svelte."
+  "footer.copyright": "© 2025 Svelte Template. Built with Svelte.",
+  "moneyflow.title": "Money Flow in Brazil",
+  "moneyflow.year": "Year",
+  "moneyflow.filter.all": "All Flows",
+  "moneyflow.filter.physical": "Physical Money",
+  "moneyflow.filter.electronic": "Electronic Money",
+  "moneyflow.legend.financial": "Financial Institutions",
+  "moneyflow.legend.people": "People/Businesses",
+  "moneyflow.legend.government": "Government/Treasury",
+  "moneyflow.legend.external": "External Market",
+  "moneyflow.legend.electronic": "Electronic Money",
+  "moneyflow.animation.play": "Play Animation",
+  "moneyflow.animation.stop": "Stop Animation",
+  "moneyflow.animation.speed": "Speed",
+  "moneyflow.animation.reset": "Reset",
+  "moneyflow.animation.step_mode": "Step-by-Step Mode",
+  "moneyflow.animation.next_step": "Next Step",
+  "moneyflow.animation.highlight": "Highlight Main Flows"
 };

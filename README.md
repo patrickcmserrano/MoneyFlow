@@ -329,3 +329,45 @@ Deploy commits include `[skip ci]` in the message to prevent the deployment from
 ## Support
 
 For questions and support, please open an issue in the project repository.
+
+# MoneyFlow
+
+Uma aplicação Svelte que visualiza o fluxo de dinheiro no Brasil através de diagramas Sankey.
+
+## Funcionalidades
+
+- **Visualização Interativa**: Diagramas Sankey para visualizar o fluxo de dinheiro entre diferentes setores da economia
+- **Filtros Dinâmicos**: Visualize apenas dinheiro físico, eletrônico ou todo o fluxo
+- **Linha do Tempo**: Explore os dados históricos e projeções de 2020 a 2025
+- **Tema Escuro/Claro**: Interface adaptável ao tema do sistema
+- **Internacionalização**: Suporte a múltiplos idiomas (Português, Inglês e Espanhol)
+
+## Tecnologias Utilizadas
+
+- Svelte 5 com TypeScript
+- Plotly.js para visualizações de dados
+- Skeleton UI para componentes de interface
+- i18n para internacionalização
+
+## Como Iniciar
+
+1. **Instalar Dependências**
+   ```bash
+   npm install
+   ```
+
+2. **Executar em Desenvolvimento**
+   ```bash
+   npm run dev
+   ```
+
+3. **Construir para Produção**
+   ```bash
+   npm run build
+   ```
+
+## Estrutura do Projeto
+
+O componente principal de visualização está em `src/components/MoneyFlow.svelte`, que contém toda a lógica para renderizar os diagramas Sankey usando Plotly.js.
+
+---
