@@ -1,10 +1,14 @@
 <script lang="ts">
   import { _ } from '../../lib/i18n';
-  import { fade } from 'svelte/transition';
   import { onMount } from 'svelte';
 
   export let container;
   export let id: string = 'intro'; // Adicionando propriedade id com valor padrão
+  
+  // Função para rolar até a próxima seção
+  function scrollToNextSection() {
+    document.getElementById('primitiveorigins')?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   onMount(() => {
     // Garantir que o container seja renderizado corretamente
@@ -17,11 +21,10 @@
 
 <div {id} class="section h-screen relative">
   <!-- Removendo o fundo fixo para permitir que a cena 3D seja visível -->
-  <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center z-10 p-4">
-    <h1 class="text-5xl md:text-7xl font-bold animate-fade-in">{$_('moneymind.title')}</h1>
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center z-10 p-4">    <h1 class="text-5xl md:text-7xl font-bold animate-fade-in">{$_('moneymind.title')}</h1>
     <p class="mt-4 text-xl md:text-2xl animate-slide-up">{$_('moneymind.subtitle')}</p>
     <button class="mt-8 px-6 py-2 bg-purple-700 hover:bg-purple-600 rounded-full text-white animate-pulse" 
-            on:click={() => document.getElementById('history')?.scrollIntoView({ behavior: 'smooth' })}>
+            on:click={scrollToNextSection}>
       {$_('moneymind.start_journey')}
     </button>
     

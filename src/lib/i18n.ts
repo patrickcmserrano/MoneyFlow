@@ -6,18 +6,23 @@ import { writable } from 'svelte/store';
 import en from './locales/en';
 import pt from './locales/pt';
 import es from './locales/es';
+import sectionTranslations from './locales/sections';
 
 // Language definitions
 export const SUPPORTED_LANGUAGES = ['en', 'pt', 'es'] as const;
 export type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
 
 // Basic translations (usado principalmente para testes)
-export const translations = { en, pt, es };
+export const translations = { 
+  en: { ...en, ...sectionTranslations.en }, 
+  pt: { ...pt, ...sectionTranslations.pt }, 
+  es: { ...es, ...sectionTranslations.es } 
+};
 
 // Add messages to the dictionary
-addMessages('en', en);
-addMessages('pt', pt);
-addMessages('es', es);
+addMessages('en', { ...en, ...sectionTranslations.en });
+addMessages('pt', { ...pt, ...sectionTranslations.pt });
+addMessages('es', { ...es, ...sectionTranslations.es });
 
 // Initialize i18n with appropriate settings
 export function setupI18n() {
@@ -99,7 +104,7 @@ export function createI18nStore() {
       const translation = langTranslations?.[key as string];
       
       if (!translation && process.env.NODE_ENV === 'development') {
-        console.warn(`Warning: Translation key "${key}" not found in language "${lang}"`);
+        console.warn(`Warning: Translation key "${String(key)}" not found in language "${lang}"`);
       }
       return translation || key;
     },

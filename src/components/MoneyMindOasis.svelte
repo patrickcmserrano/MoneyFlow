@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { _ } from '../lib/i18n';
-  
   // Componentes de base
   import RoadmapNav from './navigation/RoadmapNav.svelte';
   import CoinScene from './three/CoinScene.svelte';
@@ -9,19 +8,17 @@
     // Importar componentes de seção
   import IntroSection from './sections/IntroSection.svelte';
   import PrimitiveOriginsSection from './sections/PrimitiveOriginsSection.svelte';
-  import HistorySection from './sections/HistorySection.svelte';
-  import ConceptsSection from './sections/ConceptsSection.svelte';
-  import ToolsSection from './sections/ToolsSection.svelte';
-  import PracticeSection from './sections/PracticeSection.svelte';
+  import CoinsMetalSection from './sections/CoinsMetalSection.svelte';
+  import PaperDigitalSection from './sections/PaperDigitalSection.svelte';
+  import PhilosophySection from './sections/PhilosophySection.svelte';
 
   // Definir tipos explícitos para as variáveis
   let container: HTMLDivElement | null = null;
   let containerReady = false;
     // Definir variáveis que estavam faltando
   let activeSection: string = 'intro'; // Seção ativa por padrão
-  
   // Lista de seções para monitorar durante o scroll
-  const sections = ['intro', 'primitiveorigins', 'history', 'concepts', 'tools', 'practice'];
+  const sections = ['intro', 'primitiveorigins', 'coinsmetal', 'paperdigital', 'philosophy'];
   
   // Função para rolar até uma seção específica
   function scrollToSection(sectionId: string): void {
@@ -116,10 +113,9 @@
     
     <!-- Seções adicionais que serão roladas -->
     <PrimitiveOriginsSection id="primitiveorigins" {scrollToSection} />
-    <HistorySection id="history" {scrollToSection} />
-    <ConceptsSection id="concepts" {scrollToSection} />
-    <ToolsSection id="tools" {scrollToSection} />
-    <PracticeSection id="practice" {scrollToSection} />
+    <CoinsMetalSection id="coinsmetal" {scrollToSection} />
+    <PaperDigitalSection id="paperdigital" {scrollToSection} />
+    <PhilosophySection id="philosophy" {scrollToSection} />
   </div>
 </div>
 

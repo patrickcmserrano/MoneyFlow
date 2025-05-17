@@ -8,10 +8,9 @@
   const sections = [
     { id: 'intro', name: $_('navigation.intro', { default: 'Introdução' }) },
     { id: 'primitiveorigins', name: $_('navigation.primitiveorigins', { default: 'Origens Primitivas' }) },
-    { id: 'history', name: $_('navigation.history', { default: 'História' }) },
-    { id: 'concepts', name: $_('navigation.concepts', { default: 'Conceitos' }) },
-    { id: 'tools', name: $_('navigation.tools', { default: 'Ferramentas' }) },
-    { id: 'practice', name: $_('navigation.practice', { default: 'Prática' }) }
+    { id: 'coinsmetal', name: $_('navigation.coinsmetal', { default: 'Moedas e Metal' }) },
+    { id: 'paperdigital', name: $_('navigation.paperdigital', { default: 'Papel/Digital' }) },
+    { id: 'philosophy', name: $_('navigation.philosophy', { default: 'Filosofia' }) }
   ];
 </script>
 
