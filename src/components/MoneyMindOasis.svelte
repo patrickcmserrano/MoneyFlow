@@ -31,47 +31,11 @@
       activeSection = sectionId;
     }
   }
-  
-  // Função para detectar qual seção está visível
-  function updateActiveSection(): void {
-    const scrollPosition = window.scrollY;
-    const viewportHeight = window.innerHeight;
-    const middleViewport = scrollPosition + viewportHeight / 2;
-    
-    // Verificar cada seção e determinar qual está mais visível
-    for (const sectionId of sections) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const sectionTop = scrollPosition + rect.top;
-        const sectionBottom = scrollPosition + rect.bottom;
-        
-        // Se o ponto médio da viewport estiver dentro desta seção
-        if (middleViewport >= sectionTop && middleViewport <= sectionBottom) {
-          if (activeSection !== sectionId) {
-            activeSection = sectionId;
-          }
-          break; // Encontrou a seção, sair do loop
-        }
-      }
-    }
-  }
-  
-  // Throttling para melhor desempenho
-  let ticking = false;
-  function handleScroll(): void {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateActiveSection();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
+    // Observer para monitorar a visibilidade das seções
+  let observer: IntersectionObserver | null = null;
 
   // Inicializar container imediatamente
-  onMount(() => {
-    // Inicializar o container
+  onMount(() => {    // Inicializar o container
     if (!container) {
       container = document.createElement('div');
       container.className = 'coin-scene-container';
@@ -87,20 +51,48 @@
     // Indicar que o container está pronto imediatamente
     containerReady = true;
     
-    // Adicionar evento de scroll
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Configurar IntersectionObserver
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            activeSection = entry.target.id;
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5, // Ativa quando 50% da seção está visível
+      }
+    );
     
-    // Verificar seção inicial após o carregamento da página
-    setTimeout(updateActiveSection, 200);
+    // Observar todas as seções
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) observer?.observe(element);
+    });
     
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      // Limpar observer
+      if (observer) {
+        observer.disconnect();
+        observer = null;
+      }
+      // Remover container
+      if (container && container.parentNode) {
+        container.parentNode.removeChild(container);
+      }
     };
   });
-
   onDestroy(() => {
     containerReady = false;
-    window.removeEventListener('scroll', handleScroll);
+    
+    // Limpar IntersectionObserver
+    if (observer) {
+      observer.disconnect();
+      observer = null;
+    }
     
     // Remover o container se foi criado dinamicamente
     if (container && container.parentNode) {
@@ -116,10 +108,9 @@
   <RoadmapNav {activeSection} {scrollToSection} />
   
   <!-- Container principal com a cena 3D -->
-  <div class="main-content">
-    <!-- Cena 3D -->
+  <div class="main-content">    <!-- Cena 3D -->
     {#if containerReady}
-      <CoinScene {container} />
+      <CoinScene {container} {activeSection} />
     {/if}    <!-- Primeira seção (introdução) com background transparente para mostrar a cena 3D -->
     <IntroSection id="intro" {container} />
     

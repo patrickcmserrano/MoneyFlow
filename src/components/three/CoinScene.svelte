@@ -3,8 +3,8 @@
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   import SceneStyles from '../styles/SceneStyles.svelte';
-
   export let container: HTMLElement | null = null;
+  export let activeSection: string = 'intro';
   let scene: THREE.Scene | null = null;
   let camera: THREE.PerspectiveCamera | null = null;
   let renderer: THREE.WebGLRenderer | null = null;

@@ -105,10 +105,10 @@
     background: #a855f7; /* Roxo claro */
     box-shadow: 0 0 10px #a855f7;
   }
-
   .roadmap-item.active .roadmap-label {
     opacity: 1;
     font-weight: bold;
+    color: #a855f7; /* Texto roxo para maior destaque */
   }
   
   /* Ajustes responsivos */
