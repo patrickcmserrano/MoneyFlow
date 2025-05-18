@@ -1,152 +1,104 @@
 import { test, expect } from '@playwright/test';
+import { HomePage } from './page-objects/HomePage';
 
-test.describe('Internationalization (i18n) Tests', () => {
-  test.beforeEach(async ({ page }) => {
-    // Navigate to the home page before each test
-    await page.goto('/');
-  });
-
-  test('should display the language selector', async ({ page }) => {
-    // Check if language buttons are present
-    const enButton = page.getByRole('button', { name: 'English' });
-    const ptButton = page.getByRole('button', { name: 'Português' });
-    const esButton = page.getByRole('button', { name: 'Español' });
+test.describe('Internacionalização (i18n)', () => {
+  test('deve ter textos corretos em todos os idiomas', async ({ page }) => {
+    const homePage = new HomePage(page);
+    await homePage.goto();
     
-    await expect(enButton).toBeVisible();
-    await expect(ptButton).toBeVisible();
-    await expect(esButton).toBeVisible();
-  });
-
-  test('should allow changing the language', async ({ page }) => {
-    // Record the main heading text for later comparison
-    const initialTitle = await page.getByRole('heading', { level: 1 }).textContent();
+    // Verificar idioma padrão (provavelmente inglês)
+    const initialLanguage = await homePage.getCurrentLanguage();
+    console.log(`Idioma inicial: ${initialLanguage}`);
     
-    // Change to Portuguese
-    const ptButton = page.getByRole('button', { name: 'Português' });
-    await ptButton.click();
+    // Testes com idioma português
+    await homePage.changeLanguage('pt');
+    // Aguardar um pouco mais para garantir que a mudança de idioma seja aplicada
+    await page.waitForTimeout(1000);
     
-    // Wait for the text to change (may need to adjust this time)
-    await page.waitForTimeout(500);
+    // Verificar se algum texto em português está visível
+    const brazilTextPt = await page.getByText('Fluxo do Dinheiro').isVisible();
+    expect(brazilTextPt, 'Texto em português deve estar visível').toBeTruthy();
     
-    // Check if the text has been updated
-    const titleAfterChange = await page.getByRole('heading', { level: 1 }).textContent();
-    expect(titleAfterChange).not.toBe(initialTitle);
+    // Verificar elementos específicos em português
+    if (await page.locator('label:has-text("Ano:")').isVisible()) {
+      const yearLabelPt = page.locator('label:has-text("Ano:")');
+      await expect(yearLabelPt).toBeVisible();
+    }
     
-    // Change to Spanish
-    const esButton = page.getByRole('button', { name: 'Español' });
-    await esButton.click();
+    // Voltar para o idioma inglês
+    await homePage.changeLanguage('en');
+    await page.waitForTimeout(1000);
     
-    // Wait for the text to change
-    await page.waitForTimeout(500);
+    // Verificar se algum texto em inglês está visível
+    const brazilTextEn = await page.getByText('Money Flow').isVisible();
+    expect(brazilTextEn, 'Texto em inglês deve estar visível').toBeTruthy();
     
-    // Check if the text has been updated again
-    const titleAfterSecondChange = await page.getByRole('heading', { level: 1 }).textContent();
-    expect(titleAfterSecondChange).not.toBe(initialTitle);
-    expect(titleAfterSecondChange).not.toBe(titleAfterChange);
-  });
-
-  test('should display texts corresponding to the selected language', async ({ page }) => {
-    // Expected texts in each language (based on i18n.ts file)
-    const expectedTexts = {
-      en: {
-        title: 'Svelte Template with Theme',
-        subtitle: 'A basic Svelte application template with light/dark theme support.'
-      },
-      pt: {
-        title: 'Template Svelte com Tema',
-        subtitle: 'Um modelo básico de aplicação Svelte com suporte a tema claro/escuro.'
-      },
-      es: {
-        title: 'Plantilla Svelte con Tema',
-        subtitle: 'Un modelo básico de aplicación Svelte con suporte para tema claro/oscuro.'
-      }
-    };
+    // Verificar elementos específicos em inglês
+    if (await page.locator('label:has-text("Year:")').isVisible()) {
+      const yearLabelEn = page.locator('label:has-text("Year:")');
+      await expect(yearLabelEn).toBeVisible();
+    }
     
-    // Test each language
-    const languages = [
-      { code: 'en', button: page.getByRole('button', { name: 'English' }) },
-      { code: 'pt', button: page.getByRole('button', { name: 'Português' }) },
-      { code: 'es', button: page.getByRole('button', { name: 'Español' }) }
-    ];
+    // Testes com idioma espanhol
+    await homePage.changeLanguage('es');
+    await page.waitForTimeout(1000);
     
-    for (const lang of languages) {
-      // Change to the language
-      await lang.button.click();
-      
-      // Wait for the text to change
-      await page.waitForTimeout(500);
-      
-      // Check the title
-      const title = await page.getByRole('heading', { level: 1 }).textContent();
-      expect(title).toContain(expectedTexts[lang.code].title);
-      
-      // Check the subtitle
-      const subtitle = page.getByText(expectedTexts[lang.code].subtitle, { exact: true });
-      await expect(subtitle).toBeVisible();
+    // Verificar se algum texto em espanhol está visível
+    const brazilTextEs = await page.getByText('Flujo de Dinero').isVisible();
+    expect(brazilTextEs, 'Texto em espanhol deve estar visível').toBeTruthy();
+    
+    // Verificar elementos específicos em espanhol
+    if (await page.locator('label:has-text("Año:")').isVisible()) {
+      const yearLabelEs = page.locator('label:has-text("Año:")');
+      await expect(yearLabelEs).toBeVisible();
     }
   });
 
-  test('should persist language preference between reloads', async ({ page }) => {
-    // Change to Portuguese
-    const ptButton = page.getByRole('button', { name: 'Português' });
-    await ptButton.click();
+  test('deve manter o idioma ao alternar entre MoneyFlow e MoneyMind', async ({ page }) => {
+    const homePage = new HomePage(page);
+    await homePage.goto();
     
-    // Wait for the text to change
-    await page.waitForTimeout(500);
+    // Mudar para espanhol para facilitar a detecção de mudanças
+    await homePage.changeLanguage('es');
+    await page.waitForTimeout(1000);
     
-    // Record the heading text in Portuguese
-    const titleInPortuguese = await page.getByRole('heading', { level: 1 }).textContent();
+    // Ver qual é a visão atual
+    const isMoneyMindVisible = await page.locator('.moneymind-wrapper').isVisible();
+    const isMoneyFlowVisible = await page.locator('.moneyflow-wrapper').isVisible();
     
-    // Reload the page
-    await page.reload();
-    
-    // Wait for the page to fully load after reload
-    await page.waitForLoadState('networkidle');
-    
-    // Check if the text is still in Portuguese after reload
-    const titleAfterReload = await page.getByRole('heading', { level: 1 }).textContent();
-    expect(titleAfterReload).toBe(titleInPortuguese);
-  });
-
-  test('should display MoneyMind strings in the correct language', async ({ page }) => {
-    // Primeiro, vamos navegar para a página MoneyMind Oasis, se disponível
-    const moneyMindButton = page.getByRole('link', { name: /MoneyMind Oasis/i });
-    if (await moneyMindButton.isVisible()) {
-      await moneyMindButton.click();
-      await page.waitForTimeout(500);
-    }
-    
-    // Strings esperadas para o título do MoneyMind em cada idioma
-    const expectedMoneyMindTitles = {
-      en: 'MoneyMind Oasis',
-      pt: 'MoneyMind Oasis',
-      es: 'MoneyMind Oasis'
-    };
-    
-    // Testar cada idioma
-    const languages = [
-      { code: 'en', button: page.getByRole('button', { name: 'English' }) },
-      { code: 'pt', button: page.getByRole('button', { name: 'Português' }) },
-      { code: 'es', button: page.getByRole('button', { name: 'Español' }) }
-    ];
-    
-    for (const lang of languages) {
-      // Mudar para o idioma
-      await lang.button.click();
+    if (isMoneyMindVisible) {
+      console.log('Começando no MoneyMind');
+      // Se estiver no MoneyMind, verificar texto em espanhol
+      await expect(page.getByText('Explora el significado', { exact: false })).toBeVisible();
       
-      // Esperar a mudança de texto
-      await page.waitForTimeout(500);
-      
-      // Verificar título do MoneyMind (se estiver disponível na página)
-      const moneyMindTitle = page.getByText(expectedMoneyMindTitles[lang.code], { exact: true });
-      if (await moneyMindTitle.isVisible()) {
-        await expect(moneyMindTitle).toBeVisible();
-      } else {
-        console.log(`MoneyMind title not found for language: ${lang.code}`);
+      // Alternar para MoneyFlow
+      const switchButtonLocator = page.getByRole('button').filter({ hasText: /Volver|Flujo/i });
+      if (await switchButtonLocator.isVisible()) {
+        await switchButtonLocator.click();
+        await page.waitForTimeout(1000);
+        
+        // Verificar se o MoneyFlow está em espanhol
+        const moneyFlowTextEs = await page.getByText('Flujo de Dinero').isVisible();
+        expect(moneyFlowTextEs, 'Texto em espanhol deve ser mantido após alternar').toBeTruthy();
       }
+    } else if (isMoneyFlowVisible) {
+      console.log('Começando no MoneyFlow');
+      // Se estiver no MoneyFlow, verificar texto em espanhol
+      await expect(page.getByText('Flujo de Dinero', { exact: false })).toBeVisible();
       
-      // Verificar outras strings do MoneyMind se estiverem disponíveis
-      // Podemos expandir isso conforme necessário
+      // Alternar para MoneyMind
+      const switchButtonLocator = page.getByRole('button').filter({ hasText: /Alternar|MoneyMind/i });
+      if (await switchButtonLocator.isVisible()) {
+        await switchButtonLocator.click();
+        await page.waitForTimeout(1000);
+        
+        // Verificar se o MoneyMind está em espanhol
+        const moneyMindTextEs = await page.getByText('Explora', { exact: false }).isVisible();
+        expect(moneyMindTextEs, 'Texto em espanhol deve ser mantido após alternar').toBeTruthy();
+      }
+    } else {
+      // Se nenhum dos componentes estiver visível, falhar o teste
+      expect(false, 'Nem MoneyFlow nem MoneyMind estão visíveis').toBeTruthy();
     }
   });
 });

@@ -124,10 +124,8 @@ export function createI18nStore() {
       
       if (missingInPt.length) {
         console.warn(`Chaves faltando em PT: ${missingInPt.join(', ')}`);
-      }
-      
-      if (missingInEs.length) {
-        console.warn(`Chaves faltando em ES: ${missingInEs.length > 10 ? `${missingInEs.length} chaves` : missingInEs.join(', ')}`);
+      }      if (missingInEs.length) {
+        console.warn(`Chaves faltando em ES: ${missingInEs.join(', ')}`);
       }
       
       return { enKeys, ptKeys, esKeys, missingInPt, missingInEs };

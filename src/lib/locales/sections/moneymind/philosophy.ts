@@ -1,12 +1,12 @@
 export default {
   "moneymind.philosophy.title": "Filosofia",
-  "moneymind.philosophy.fiction.title": "Dinheiro como Ficção",
-  "moneymind.philosophy.fiction.text": "O dinheiro é uma \"realidade imaginada\", existindo apenas na crença coletiva (The Ascent of Money). Conchas cauri e dólares não têm valor intrínseco; seu poder vem da confiança mútua.",
-  "moneymind.philosophy.capitalism.title": "Capitalismo e Crescimento",
-  "moneymind.philosophy.capitalism.text": "Adam Smith (A Riqueza das Nações, 1776) introduziu a ideia de que lucros reinvestidos geram crescimento econômico, transformando a economia em um jogo de soma positiva. O capitalismo moderno vê o crescimento como o bem supremo (The Bitcoin Standard).",
-  "moneymind.philosophy.darkside.title": "Lado Sombrio",
-  "moneymind.philosophy.darkside.text": "O dinheiro corrói tradições locais e valores humanos, substituindo-os pelas leis da oferta e demanda. Ele tenta converter tudo — até honra e amor — em mercadorias (Debt: The First 5,000 Years).",
-  "moneymind.philosophy.bitcoinphil.title": "Bitcoin e Filosofia",
-  "moneymind.philosophy.bitcoinphil.text": "O Bitcoin reflete uma filosofia de descentralização e liberdade, desafiando o controle estatal e a confiança em instituições (Nakamoto.com). Ele resgata a ideia de dinheiro como um contrato social, não uma imposição.",
-  "moneymind.philosophy.suggestion": "Use citações de filósofos e economistas (e.g., Smith, Graeber) para ilustrar o dinheiro como ficção. Inclua um quiz interativo sobre os prós e contras do capitalismo e do Bitcoin."
+  "moneymind.philosophy.bitcoin.title": "Filosofia Bitcoin",
+  "moneymind.philosophy.bitcoin.text": "O design do Bitcoin incorpora princípios do libertarianismo, economia austríaca e ideais cypherpunk. Descentralização, oferta limitada e verificação criptográfica visam separar o dinheiro do controle estatal.",
+  "moneymind.philosophy.debate.title": "Debate",
+  "moneymind.philosophy.debate.text": "Debates sobre a natureza do dinheiro existem há milênios. Em A Riqueza das Nações (1776), Adam Smith discutiu como o valor do papel-moeda depende da credibilidade do emissor, um tema renovado pelas criptomoedas.",
+  "moneymind.philosophy.ethics.title": "Considerações Éticas",
+  "moneymind.philosophy.ethics.text": "Os sistemas monetários modernos levantam questões sobre design inclusivo, acessibilidade e impacto ambiental. A mineração de Bitcoin enfrenta críticas pelo alto consumo de energia, enquanto defensores argumentam que incentiva o desenvolvimento de energia renovável.",
+  "moneymind.philosophy.future.title": "Considerações Futuras",
+  "moneymind.philosophy.future.text": "Como sugere o filósofo Nick Szabo, o dinheiro evolui junto com as necessidades humanas e a tecnologia. O futuro pode envolver tanto moedas digitais de bancos centrais (CBDCs) quanto criptomoedas descentralizadas, refletindo tensões contínuas entre o controle estatal e a liberdade individual.",
+  "moneymind.philosophy.suggestion": "Inclua uma seção de debate com pontos de vista opostos de economistas e filósofos sobre o papel do dinheiro na sociedade. Adicione links para obras seminais sobre filosofia monetária para aqueles que desejam explorar mais."
 };

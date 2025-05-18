@@ -1,0 +1,20 @@
+{
+  "name": "moneyflow-e2e-tests",
+  "version": "1.0.0",
+  "description": "Testes end-to-end para MoneyFlow",
+  "scripts": {
+    "test": "playwright test",
+    "test:basic": "playwright test basic.spec.ts",
+    "test:a11y": "playwright test accessibility.spec.ts advanced-a11y.spec.ts axe-a11y.spec.ts",
+    "test:i18n": "playwright test i18n.spec.ts",
+    "test:moneyflow": "playwright test moneyflow.spec.ts enhanced-moneyflow.spec.ts",
+    "test:moneymind": "playwright test navigation.spec.ts enhanced-moneymind.spec.ts",
+    "test:visual": "playwright test --project='chromium' --grep='@visual'",
+    "test:report": "playwright show-report",
+    "test:debug": "playwright test --debug",
+    "test:ci": "playwright test --reporter=dot,html"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.7.3"
+  }
+}

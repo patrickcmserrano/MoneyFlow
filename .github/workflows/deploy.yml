@@ -1,69 +1,124 @@
-name: Deploy to GitHub Pages (CD)
+name: Deploy Svelte App to GitHub Pages
 
 on:
-  # Only manually or workflow_dispatch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
-    inputs:
-      deploy_coverage:
-        description: 'Publish coverage report'
-        type: boolean
-        default: true
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy-app:
+  unit-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Needed for --changed to compare commits
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
-      - name: Install and Build
-        run: |
-          npm ci
-          npm run build
-      
-      - name: Create .nojekyll
-        run: touch dist/.nojekyll
-      
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          branch: gh-pages
-          clean-exclude: coverage/**
-          commit-message: "Deploy application [skip ci]"
-  
-  deploy-coverage:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.deploy_coverage == 'true' }}
-    needs: deploy-app
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      
       - name: Install Dependencies
         run: npm ci
-      
-      - name: Run Unit Tests with Coverage
-        run: npm run test:coverage
-      
-      - name: Deploy Coverage Report
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Run Unit Tests
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            npm run test:changed:coverage
+          else
+            npm run test:coverage
+          fi
+      - name: Upload Coverage Reports
+        uses: actions/upload-artifact@v4
         with:
-          folder: coverage/
-          branch: gh-pages
-          target-folder: coverage
-          clean: false
-          commit-message: "Deploy coverage report [skip ci]"
+          name: coverage-report
+          path: coverage/
+          retention-days: 7
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          directory: ./coverage/
+          fail_ci_if_error: false
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Needed for --changed to compare commits
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install Dependencies
+        run: npm ci
+      - name: Cache Playwright Browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          restore-keys: ${{ runner.os }}-playwright-
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run E2E Tests
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            npm run e2e:changed
+          else
+            npm run e2e
+          fi
+      - name: Upload Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  build:
+    needs: [unit-tests, e2e-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build
+        run: NODE_ENV=production npm run build
+      - name: Create .nojekyll
+        run: touch dist/.nojekyll
+      - name: Verify Build Output
+        run: ls -la dist/
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

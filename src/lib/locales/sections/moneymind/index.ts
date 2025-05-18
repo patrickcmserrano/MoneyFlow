@@ -5,8 +5,14 @@ import philosophyTranslations from './philosophy';
 import coinsMetalTranslationsEn from './coinsmetal.en';
 import paperDigitalTranslationsEn from './paperdigital.en';
 import philosophyTranslationsEn from './philosophy.en';
-import * as moneymindPt from './pt';
-import * as moneymindEn from './en';
+import philosophyTranslationsEs from './philosophy.es';
+import coinsMetalTranslationsEs from './coinsmetal.es';
+import paperDigitalTranslationsEs from './paperdigital.es';
+import primitiveorigins from './primitiveorigins';
+import primitiveoriginsEn from './primitiveorigins.en';
+import primitiveoriginsEs from './primitiveorigins.es';
+import moneymindPt from './pt';
+import moneymindEn from './en';
 import moneymindEs from './es';
 
 // Combina todas as traduções em um único objeto
@@ -15,17 +21,25 @@ const moneymindTranslations = {
     ...moneymindPt,
     ...coinsMetalTranslations,
     ...paperDigitalTranslations,
-    ...philosophyTranslations
+    ...philosophyTranslations,
+    ...primitiveorigins
   },
   en: {
     ...moneymindEn,
     ...coinsMetalTranslationsEn,
     ...paperDigitalTranslationsEn,
-    ...philosophyTranslationsEn
-  },
+    ...philosophyTranslationsEn,
+    ...primitiveoriginsEn
+  },  
   es: {
-    ...moneymindEs
-    // Quando as versões em espanhol estiverem disponíveis, adicionar aqui
+    ...moneymindEs,
+    // Adicionando as traduções em espanhol para a seção de filosofia
+    ...philosophyTranslationsEs,
+    // Adicionando as novas traduções em espanhol
+    ...coinsMetalTranslationsEs,
+    ...paperDigitalTranslationsEs,
+    ...primitiveoriginsEs
+    // Quando mais versões em espanhol estiverem disponíveis, adicionar aqui
   }
 };
 
