@@ -2,10 +2,12 @@ import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import tailwindcss from '@tailwindcss/vite';
 
-// https://vitejs.dev/config/
-export default defineConfig({  plugins: [
+export default defineConfig({
+  plugins: [
     tailwindcss(),
-    svelte(),
+    svelte({
+      extensions: ['.svelte', '.md'],
+    }),
   ],
-  base: '/MoneyFlow/', // Base path for GitHub Pages
+  base: process.env.NODE_ENV === 'production' ? '/MoneyFlow/' : '/',
 });
