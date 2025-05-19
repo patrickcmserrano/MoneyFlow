@@ -224,7 +224,36 @@ npm run e2e:ui
 
 # View E2E test report
 npm run e2e:report
+
+# Run tests only on Chromium (recommended for stability)
+npm run e2e:chromium
+
+# Prepare environment and run tests
+npm run prepare-tests
 ```
+
+#### Troubleshooting E2E Tests
+
+If you encounter issues with the E2E tests, try these solutions:
+
+1. **Prepare the testing environment**:
+   ```bash
+   npm run prepare-tests
+   ```
+   This script installs necessary dependencies and configures everything for you.
+
+2. **Run with only Chromium browser**:
+   ```bash
+   npm run e2e:chromium
+   ```
+   This avoids issues with missing system dependencies for WebKit/Safari.
+
+3. **Install system dependencies manually** (requires sudo):
+   ```bash
+   sudo npx playwright install-deps
+   ```
+
+See the detailed guide in `e2e-tests/README.md` for more information.
 
 #### E2E Internationalization Tests
 

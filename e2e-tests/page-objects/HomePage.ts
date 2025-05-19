@@ -94,20 +94,34 @@ export class HomePage {
   }
 
   async goto() {
-    await this.page.goto('/');
+    // Tentativas múltiplas para lidar com possíveis falhas intermitentes
+    const maxRetries = 3;
+    let lastError = null;
     
-    try {
-      // Usar um timeout mais curto e uma estratégia mais tolerante
-      await this.page.waitForLoadState('domcontentloaded', { timeout: 10000 });
-      
-      // Esperar por um elemento específico que indica que a página está carregada
-      await this.page.waitForSelector('body', { state: 'visible', timeout: 5000 });
-      
-      // Pequena pausa para scripts adicionais
-      await this.page.waitForTimeout(1000);
-    } catch (error) {
-      console.log('Aviso: Timeout ao esperar carregamento completo da página, mas continuando...');
+    for (let attempt = 0; attempt < maxRetries; attempt++) {
+      try {
+        // Use navegação com espera de rede
+        await this.page.goto('/', { waitUntil: 'networkidle', timeout: 30000 });
+        
+        // Verificação adicional para garantir que a página está carregada
+        await this.page.waitForSelector('body', { state: 'visible', timeout: 10000 });
+        
+        // Se chegou aqui, a navegação foi bem-sucedida
+        return;
+      } catch (error) {
+        console.log(`Tentativa ${attempt + 1} falhou: ${error.message}`);
+        lastError = error;
+        
+        // Espera antes de tentar novamente
+        if (attempt < maxRetries - 1) {
+          await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+      }
     }
+    
+    // Se chegou aqui, todas as tentativas falharam
+    console.error('Falha após múltiplas tentativas de navegação');
+    throw lastError;
   }
 
   async changeLanguage(language: Language) {
@@ -117,8 +131,23 @@ export class HomePage {
       es: this.languageSelector.spanish
     };
     
+    // Verificar se o botão está visível
+    await expect(langButtonMap[language]).toBeVisible({ timeout: 5000 });
+    
+    // Clicar e verificar que o clique foi processado
     await langButtonMap[language].click();
-    await this.page.waitForTimeout(500); // Aguardar a mudança de idioma
+    
+    // Aguardar para garantir que o idioma foi alterado
+    // Using setTimeout instead of page.waitForTimeout
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Verificação adicional para garantir que a mudança de idioma foi aplicada
+    const currentLang = await this.getCurrentLanguage();
+    if (currentLang !== language) {
+      console.log(`Aviso: Idioma esperado era ${language}, mas ainda está ${currentLang}. Tentando novamente...`);
+      await langButtonMap[language].click();
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
   }
 
   async getCurrentLanguage(): Promise<Language> {
@@ -218,6 +247,9 @@ export class HomePage {
     
     while (attempt < retries) {
       try {
+        // Verificar se o elemento está visível primeiro
+        await expect(locator).toBeVisible({ timeout: 5000 });
+        
         const text = await locator.textContent();
         expect(text).toContain(expectedText);
         return; // Se não lançar erro, sai do loop
@@ -226,8 +258,9 @@ export class HomePage {
         attempt++;
         
         if (attempt < retries) {
-          // Espera um pouco antes de tentar novamente
-          await this.page.waitForTimeout(500);
+          // Espera um pouco antes de tentar novamente, mas usa setTimeout
+          // em vez do page.waitForTimeout para evitar erros se a página fechar
+          await new Promise(resolve => setTimeout(resolve, 1000));
         }
       }
     }
@@ -239,7 +272,7 @@ export class HomePage {
   async verifyWithRetry(
     assertion: () => Promise<void>,
     retries = 3,
-    delay = 500
+    delay = 1000
   ) {
     for (let i = 0; i < retries; i++) {
       try {

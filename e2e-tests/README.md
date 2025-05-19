@@ -149,3 +149,44 @@ Os testes estão configurados para rodar em ambientes de CI com adaptações:
 1. Adicionar testes visuais com comparação de screenshots
 2. Implementar testes de performance
 3. Melhorar a cobertura de testes de acessibilidade
+
+## Solução de Problemas Comuns
+
+### Configurando o Ambiente de Testes
+
+Para facilitar a configuração do ambiente de testes, use o script de preparação:
+
+```bash
+npm run prepare-tests
+```
+
+Este script:
+1. Instalará o Playwright e o navegador Chromium
+2. Tentará instalar as dependências do sistema necessárias
+3. Iniciará o servidor de desenvolvimento
+4. Executará os testes usando apenas o Chromium
+
+### Erros comuns:
+
+1. **Problemas com conexão ao servidor**: 
+   Se os testes falham com erros como "page.goto: Target page, context or browser has been closed", verifique:
+   - Se o servidor de desenvolvimento está em execução (npm run dev)
+   - Se a URL base está correta no arquivo playwright.config.ts
+
+2. **Erros de dependências no WebKit ou outros navegadores**:
+   Execute o comando para instalar as dependências:
+   ```bash
+   sudo npx playwright install-deps
+   ```
+
+3. **Erros de timeout**:
+   - Aumente os valores de timeout no arquivo playwright.config.ts
+   - Verifique se o servidor está respondendo corretamente
+
+### Executando Apenas com Chromium
+
+Para maior compatibilidade, você pode executar os testes apenas com o navegador Chromium:
+
+```bash
+npm run e2e:chromium
+```
